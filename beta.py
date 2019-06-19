@@ -185,10 +185,10 @@ def pilih():
 				os.system('nano Login.txt')
 				
 				keluar()
+			    else:
+				if zedd == '0':
+					keluar()
 				else:
-								if zedd == '0':
-									keluar()
-								else:
 									print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + zedd + ' \x1b[1;91mTidak ada'
 									pilih()
 
