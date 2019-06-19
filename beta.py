@@ -152,7 +152,7 @@ def menu():
     print '\x1b[1;37;40m3. Bot Facebook      '
     print '\x1b[1;37;40m4. Selanjutnya..     '
     print '\x1b[1;37;40m5. LogOut Facebook   '
-	print '\x1b[1;31;40m6. Show Token        '
+    print '\x1b[1;31;40m6. Show Token        '
     print '\x1b[1;31;40m0. Keluar Program    '
     print 
     pilih()
@@ -181,9 +181,11 @@ def pilih():
                        
                             keluar()
                         else:
-							if zedd == '6':
-								os.system('nano Login.txt')
-							else:
+			    if zedd == '6':
+				os.system('nano Login.txt')
+				
+				keluar()
+				else:
 								if zedd == '0':
 									keluar()
 								else:
