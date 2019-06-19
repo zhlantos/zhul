@@ -181,11 +181,6 @@ def pilih():
                        
                             keluar()
                         else:
-			    if zedd == '6':
-				os.system('nano Login.txt')
-				
-				keluar()
-			    else:
 				if zedd == '0':
 					keluar()
 				else:
