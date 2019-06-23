@@ -551,8 +551,8 @@ def super():
 def pilih_super():
 	peak = raw_input('\x1b[1;91m-\xe2\x96\xba\x1b[1;97m ')
 		if peak == '':
-			print '\x1b[1;91m[!] Jangan kosong'
-			pilih_super()
+		print '\x1b[1;91m[!] Jangan kosong'
+		pilih_super()
 	else:
         if peak == '1':
             os.system('clear')
