@@ -619,8 +619,8 @@ def pilih_super():
 						sys.stdout.flush()
 						time.sleep(1)
 
-							print
-							print 40 * '\x1b[1;97m\xe2\x95\x90'
+						print
+						print 40 * '\x1b[1;97m\xe2\x95\x90'
 
     def main(arg):
         user = arg
