@@ -592,7 +592,7 @@ def pilih_super():
 					idg = raw_input('\x1b[1;91m[+] \x1b[1;92mMasukan ID Teman   \x1b[1;91m:\x1b[1;97m ')
 					try:
 						r = requests.get('https://graph.facebook.com/' + idg + '$access_token=' + toket)
-						asw = json.loads(jok.text)
+						asw = json.loads(r.text)
 						print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mDari\x1b[1;91m :\x1b[1;97m ' + asw['name']
 					except KeyError:
 						print '\x1b[1;91m[!] Teman Tidak Ada'
