@@ -557,7 +557,8 @@ def pilih_super():
         if peak == '1':
             os.system('clear')
             print logo
-            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mGet all friend id \x1b[1;97m...')
+			print 40 * '\x1b[1;97m\xe2\x95\x90'
+            jalan('\x1b[1;91m[+] \x1b[1;92mMengambil id teman \x1b[1;97m...')
             r = requests.get('https://graph.facebook.com/me/friends?access_token=' + toket)
             z = json.loads(r.text)
             for s in z['data']:
@@ -567,11 +568,12 @@ def pilih_super():
             if peak == '2':
                 os.system('clear')
                 print logo
-                idt = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID friend \x1b[1;91m: \x1b[1;97m')
+				print 40 * '\x1b[1;97m\xe2\x95\x90'
+                idg = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID friend \x1b[1;91m: \x1b[1;97m')
                 try:
-                    jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
-                    op = json.loads(jok.text)
-                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + op['name']
+                    r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
+                    asw = json.loads(r.text)
+                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + asw['name']
                 except KeyError:
                     print '\x1b[1;91m[!] Friend not found'
                     raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
