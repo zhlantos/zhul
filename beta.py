@@ -586,23 +586,24 @@ def pilih_super():
 
             else:
 				if peak == '3':
-                os.system('clear')
-                print logo
-                idg = raw_input('\x1b[1;91m[+] \x1b[1;92mInput ID friend \x1b[1;91m: \x1b[1;97m')
-                try:
-                    r = requests.get('https://graph.facebook.com/' + idg + '$access_token=' + toket)
-                    asw = json.loads(jok.text)
-                    print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mFrom\x1b[1;91m :\x1b[1;97m ' + asw['name']
-                except KeyError:
-                    print '\x1b[1;91m[!] Friend not found'
-                    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-                    super()
+						os.system('clear')
+					print logo
+					print 40 * '\x1b[1;97m\xe2\x95\x90'
+					idg = raw_input('\x1b[1;91m[+] \x1b[1;92mMasukan ID Teman   \x1b[1;91m:\x1b[1;97m ')
+					try:
+						r = requests.get('https://graph.facebook.com/' + idg + '$access_token=' + toket)
+						asw = json.loads(jok.text)
+						print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mDari\x1b[1;91m :\x1b[1;97m ' + asw['name']
+					except KeyError:
+						print '\x1b[1;91m[!] Teman Tidak Ada'
+						raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
+						super()
 
-                jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mGet all id from friend \x1b[1;97m...')
-                r = requests.get('https://graph.facebook.com/' + idg + '/friends?access_token=' + toket)
-                z = json.loads(r.text)
-                for i in z['data']:
-                    id.append(i['id'])
+					jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mGet all id from friend \x1b[1;97m...')
+					r = requests.get('https://graph.facebook.com/' + idg + '/friends?access_token=' + toket)
+					z = json.loads(r.text)
+					for i in z['data']:
+						id.append(i['id'])
 
             else:
                 if peak == '0':
